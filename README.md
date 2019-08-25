@@ -1,3 +1,5 @@
+# DB Instance
+
 ### Q: What should I do if my queries seem to be running slowly?
     provides access to over 50 CPU, memory, file system, and disk I/O metrics. You can enable these features on a per-instance basis, granularity (all the way down to 1 second). High levels of CPU utilization can reduce query performance and in this case you may want to consider scaling your DB instance class. 
 
