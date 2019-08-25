@@ -22,4 +22,17 @@
     can turn off automatic minor version upgrades, you can do so by setting the Auto Minor Version Upgrade setting to “No”.
     
     Oracle and RDS for SQL Server, if the upgrade to the next minor version requires a change to a different edition, then we may not schedule automatic upgrades even if you have enabled the Auto Minor Version Upgrade setting.
+
 # Billing
+### Q: How will I be charged and billed for my use of Amazon RDS?
+    * DB instance hours
+    * Storage (per GB per month)
+    * I/O requests per month
+    * RDS Magnetic Storage and Amazon Aurora only
+    * Provisioned IOPS per month, Provisioned IOPS (SSD) Storage only
+    * Backup Storage
+    * data transfer in and out
+    * not charged for the data transfer incurred in replicating data between your primary and standby
+
+Backups will simply be taken from your standby to avoid I/O suspension on the DB instance primary.
+
