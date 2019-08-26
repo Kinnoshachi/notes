@@ -28,3 +28,6 @@ https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/app
 ### Fanout
 #### parallel asynchronous processing by sending to multiple places. The illustration; order placed, one ec2 endpoint starts processing the order, 2nd endpoint ec2 send order data to DW app for analysis, or data can be replicted to dev env for further optimization.
 ![sns image](https://learning.oreilly.com/library/view/aws-certified-solutions/9781119138556/images/ec08f005.jpg)
+
+
+["SNS"](https://github.com/Kinnoshachi/notes/blob/master/SA-notes.md#sns)
