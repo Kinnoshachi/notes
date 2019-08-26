@@ -15,3 +15,10 @@ https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/app
 #### two types of clients: publishers and subscribers (sometimes known as producers and consumers)
 
 ![image1](https://learning.oreilly.com/library/view/aws-certified-solutions/9781119138556/images/ec08f004.jpg)
+
+* relay events in workflow systems among distributed computer applications, 
+* move data between data stores, or update records in business systems
+* Event updates and notifications concerning validation, approval, inventory changes, and shipment status are immediately delivered to relevant system components and end users
+* relay time-critical events to mobile applications and devices
+
+### Fanout
