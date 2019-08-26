@@ -1,4 +1,5 @@
 # SNS
+
 ## ACG notes 
 https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/applications/sns/watch
 
@@ -7,4 +8,10 @@ https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/app
 #### instataneupus push based delivery
 #### SNS is push based, SNS is pulled based using ec2s.
 
+## SA Study Guide notes
+#### SNS based on publish-subscribe (pub-sub) messaging paradigm
+#### Apple, Android, Fire OS, and Windows devices, In China, to Android devices with Baidu Cloud Push. (SMS) messages to mobile device users in the United States or to email recipients worldwide
 
+#### two types of clients: publishers and subscribers (sometimes known as producers and consumers)
+
+![image1](https://learning.oreilly.com/library/view/aws-certified-solutions/9781119138556/images/ec08f004.jpg)
