@@ -27,3 +27,7 @@ def binary_search(list, item):
             low = mid + 1
     return None
 ```
+
+#### Binary search(must be sorted list) O(Log n)
+#### Simple search O(n)
+
