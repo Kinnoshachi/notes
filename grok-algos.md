@@ -9,7 +9,6 @@
 * O(n2). Example: A slow sorting algorithm, like selection sort (coming up in chapter 2).         
 * O(n!). Example: A really slow algorithm, like the traveling salesperson (coming up next!).
 
-## _______________________________
 
 ```python
 def binary_search(list, item):
@@ -31,3 +30,4 @@ def binary_search(list, item):
 #### Binary search(must be sorted list) O(Log n)
 #### Simple search O(n)
 
+## _______________________________
