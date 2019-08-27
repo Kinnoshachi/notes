@@ -87,3 +87,15 @@
 - KPL Records must be de-coded with KCL or special helper library
 
 ![i4](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-08-27%20at%201.12.09%20PM.png)
+
+## Kinesis Agent
+- monitor log files and send direct to streams
+- java based writen ontop of kpl
+- install in linux only
+#### features 
+- write from multiple directories and write to multiple streams
+- routing feature based on directory / log file
+- can pre-process data before sending to streams (single line, csv to json, log to json)
+- handles file rotation, checkpointing and retry upon failures
+- emits metrics to cloudwatch
+- great for aggrgating mass of logs
