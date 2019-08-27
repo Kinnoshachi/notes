@@ -23,6 +23,8 @@
     
     Oracle and RDS for SQL Server, if the upgrade to the next minor version requires a change to a different edition, then we may not schedule automatic upgrades even if you have enabled the Auto Minor Version Upgrade setting.
 
+    Backups will simply be taken from your standby to avoid I/O suspension on the DB instance primary.
+
 # Billing
 ### Q: How will I be charged and billed for my use of Amazon RDS?
     * DB instance hours
@@ -34,5 +36,7 @@
     * data transfer in and out
     * not charged for the data transfer incurred in replicating data between your primary and standby
 
-Backups will simply be taken from your standby to avoid I/O suspension on the DB instance primary.
+
+
+#### Q: What is a DB Subnet Group and why do I need one?
 

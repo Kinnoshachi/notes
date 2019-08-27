@@ -47,3 +47,42 @@
 - at rest via KMS
 - client side must be done manually
 - VPC endpoints available for Kinesis to access within VPC
+
+# Day 3
+# Kinesis Producers
+##### how to produce data into kinesis
+- Kinesis sdk
+- kinesis producer library (KPL)
+- kinesis Agent: linux program that runs on servers
+- 3rd party libraries spark, log4j appenders, flume, kafka connect, nifi
+
+#### kinesis producer sdk - `PutRecord(s)`
+- PutRecords uses batch and increses throughput => less http requests
+- `ProvisionedThroughputExceeded` if go over limits
+-  AWS Mobile SDK: Android, iOS etc
+- Use case: low throughput, higher latency, simple API, AWS Lambda
+#### Managed AWS sources for Kinesis Data Streams
+- cloud watch logs
+- AWS IoT
+- Kinesis Daya Analytics > can prodoce back into streams
+
+#### AWS Kinesis API - Exceptions
+- when exceeding MB or TPS for any shard
+- make sure you dont have hot shard
+#### Exception Solution
+- reties with backoff
+- increase shards(scaling)
+- ensure partition key is good/distributed
+
+#### KPL (kinesis producer library)
+- easy to use and highly configurable C++ / Java library
+- used for building high performance long running producers
+- automated and configurable retry mechanism
+- synchronous or Asynchronous API(better performance for async)
+- submits metrics to cloudwatch for monitoring
+- 2 batching subsections (both turned on by default) increases throughput decrease cost
+1. collect records and write to multiple shards in the same `PutRecords` API call
+1. Aggregate - increased latency, can store multiple records in one record +1000 records per second. incresases payload size and throughout(maximize 1MB/s limit)
+- Compression must be implemented by user
+- KPL Records must be de-coded with KCL or special helper library
+
