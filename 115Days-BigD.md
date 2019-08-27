@@ -86,3 +86,4 @@
 - Compression must be implemented by user
 - KPL Records must be de-coded with KCL or special helper library
 
+![i4](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-08-27%20at%201.12.09%20PM.png)
