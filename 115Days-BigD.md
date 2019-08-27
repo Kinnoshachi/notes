@@ -39,3 +39,11 @@
 #### Consumer Enhanced Fan-Out
 - 2mb/s read PER SHARD per enhanced consumers
 - no API needed (push model)
+
+# Day 2
+# Kinesis Security
+- control access via IAM policies
+- Encrypt in flight via HTTP endpoints
+- at rest via KMS
+- client side must be done manually
+- VPC endpoints available for Kinesis to access within VPC
