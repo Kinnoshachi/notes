@@ -3,10 +3,19 @@
 
 # SQS
 
+## ACG NOTES
+* 256 kb text p/sqs
+* standard queue and FIFO Queues
+* standard is best effort ordering and could deliver sqs more than once
+* FIFO ordered no duplicates 300 tx/s
+* pull based
+* 1m -14d, 4d default retention
+## _____________________
+
+
 #### SQS works as a buffer between application prcessing components, guarantees at least one delivery, supporting multiple readers and writers. 
 #### System design should be idempotent; such that there is no negatove effect if it processess message twice. 
 #### FIFO is not guaranteed. Sequencing information can be put in each message such that they can be reordered when retrievd from the queue if ordering is necessary.
-
 #### SQS lifecycle
 ![i2](https://learning.oreilly.com/library/view/aws-certified-solutions/9781119138556/images/ec08f001.jpg)
 
