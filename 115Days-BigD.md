@@ -12,13 +12,14 @@
 >- Kinesis analytics: real time analytic streams using SQL
 >- kinesis firehose: load streams into S3, redshift, ElasticSearch, Splunk 
 
-### Kinesis Streams
 >![architecture](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisArchitecture.png)
 >![acg2](https://github.com/Kinnoshachi/notes/blob/master/resources/kinesisUses.png)
 >![acg](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisStreamBenefits.png)
 >![loads](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisLoad.png)
 
->-streams are divided in ordered shards / partitions
+### Kinesis Streams
+
+>- streams are divided in ordered shards / partitions
 >- default data retention 24h up to 7d
 >- ability to reprocess / replay 
 >- multiple sources can consume same stream
