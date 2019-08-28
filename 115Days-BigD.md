@@ -38,14 +38,14 @@
 >>>### Kinesis Shard stream records
 >>>1. Data Blob:
 >>>1. Partiion Key: 
->>>>groups data by shard
->>>>indicates which shard data belongs to
->>>>specified by the application putting data into stream  *Use highly distibuted key to avoid *hot partition*
+>>>>- groups data by shard
+>>>>- indicates which shard data belongs to
+>>>>- specified by the application putting data into stream  *Use highly distibuted key to avoid *hot partition*
 >>>1. Sequence number: 
->>>>unique identifierfor for each record put into a shard, added by kinesis after ingestion
->>>>acts like a unique key that identifies a data blob
->>>>assigned when a producer calls `PutRecord(s)`
->>>>cant use seq num to logically seperate data in terms of what shards they came from, must use partition keys for that 
+>>>>- unique identifierfor for each record put into a shard, added by kinesis after ingestion
+>>>>- acts like a unique key that identifies a data blob
+>>>>- assigned when a producer calls `PutRecord(s)`
+>>>>- cant use seq num to logically seperate data in terms of what shards they came from, must use partition keys for that 
 
 ### Kinesis Data Stream Limits
 >#### Producer
