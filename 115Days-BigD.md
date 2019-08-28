@@ -25,30 +25,30 @@
 >- multiple sources can consume same stream
 >- realtime processing with large scale of throughput
 >- data is immutable
->#### Purposes
 
 
 
-### kinesis stream shards
-- one stream many shards
-- billing per shard
-- batching available
-- number of shards can change over time (reshard / merge)
-- records are ordered per shard
+>### kinesis stream shards
+>- one stream many shards
+>- billing per shard
+>- batching available
+>- number of shards can change over time (reshard / merge)
+>- records are ordered per shard
 
-### Kinesis Shard stream records
-- records made of data blob <1MB, serialized bytes
-- record key: sent with a record, helps group records in shards. Use highly distibuted key to avoid *hot partition*
-- Sequence number: unique identifierfor each record put in shard added by kinesis after ingestion
+>### Kinesis Shard stream records
+>- records made of data blob <1MB, serialized bytes
+>- record key: sent with a record, helps group records in shards. Use highly distibuted key to avoid *hot partition*
+>- Sequence number: unique identifierfor each record put in shard added by kinesis after ingestion
+
 ### Kinesis Data Stream Limits
-#### Producer
-- 1MB/s or 1000 messages at write PER SHARD, otherwise `ProvisionedThroughputException`
-#### Consumer Classic
-- 2mb/s read PER SHARD accross all consumers
-- 5 API calls/s PER SHARD accross all consumers
-#### Consumer Enhanced Fan-Out
-- 2mb/s read PER SHARD per enhanced consumers
-- no API needed (push model)
+>#### Producer
+>- 1MB/s or 1000 messages at write PER SHARD, otherwise `ProvisionedThroughputException`
+>#### Consumer Classic
+>- 2mb/s read PER SHARD accross all consumers
+>- 5 API calls/s PER SHARD accross all consumers
+>#### Consumer Enhanced Fan-Out
+>- 2mb/s read PER SHARD per enhanced consumers
+>- no API needed (push model)
 
 # Day 2
 # Kinesis Security
