@@ -32,13 +32,13 @@
 >>- one stream many shards
 >>- billing per shard
 >>- batching available
->>- number of shards can change over time (reshard / merge)
+>>- resharding: split or merge
 >>- records are ordered per shard
-
->### Kinesis Shard stream records
->- records made of data blob <1MB, serialized bytes
->- record key: sent with a record, helps group records in shards. Use highly distibuted key to avoid *hot partition*
->- Sequence number: unique identifierfor each record put in shard added by kinesis after ingestion
+>>![shard img]()
+>>>### Kinesis Shard stream records
+>>>- records made of data blob <1MB, serialized bytes
+>>>- record key: sent with a record, helps group records in shards. Use highly distibuted key to avoid *hot partition*
+>>>- Sequence number: unique identifierfor each record put in shard added by kinesis after ingestion
 
 ### Kinesis Data Stream Limits
 >#### Producer
