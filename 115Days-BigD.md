@@ -76,46 +76,47 @@
 - 3rd party libraries spark, log4j appenders, flume, kafka connect, nifi
 
 #### kinesis producer sdk - `PutRecord(s)`
-- PutRecords uses batch and increses throughput => less http requests
-- `ProvisionedThroughputExceeded` if go over limits
--  AWS Mobile SDK: Android, iOS etc
-- Use case: low throughput, higher latency, simple API, AWS Lambda
-#### Managed AWS sources for Kinesis Data Streams
-- cloud watch logs
-- AWS IoT
-- Kinesis Daya Analytics > can prodoce back into streams
+>- PutRecords uses batch and increses throughput => less http requests
+>- `ProvisionedThroughputExceeded` if go over limits
+>-  AWS Mobile SDK: Android, iOS etc
+>-  `PutRecords` is recomended: low throughput, higher latency, simple API, AWS Lambda
 
-#### AWS Kinesis API - Exceptions
-- when exceeding MB or TPS for any shard
-- make sure you dont have hot shard
-#### Exception Solution
-- reties with backoff
-- increase shards(scaling)
-- ensure partition key is good/distributed
+>>#### Managed AWS sources for Kinesis Data Streams
+>>- cloud watch logs
+>>- AWS IoT
+>>- Kinesis Daya Analytics > can prodoce back into streams
+>>#### AWS Kinesis API - Exceptions
+>>- when exceeding MB or TPS for any shard
+>>- make sure you dont have hot shard
+>>#### Exception Solution
+>>- reties with backoff
+>>- increase shards(scaling)
+>>- ensure partition key is good/distributed
 
 #### KPL (kinesis producer library)
-- easy to use and highly configurable C++ / Java library
-- used for building high performance long running producers
-- automated and configurable retry mechanism
-- synchronous or Asynchronous API(better performance for async)
-- submits metrics to cloudwatch for monitoring
-- 2 batching subsections (both turned on by default) increases throughput decrease cost
-1. collect records and write to multiple shards in the same `PutRecords` API call
-1. Aggregate - increased latency, can store multiple records in one record +1000 records per second. incresases payload size and throughout(maximize 1MB/s limit)
-- Compression must be implemented by user
-- KPL Records must be de-coded with KCL or special helper library
+>- easy to use and highly configurable C++ / Java library
+>- used for building high performance long running producers
+>- automated and configurable retry mechanism
+>- synchronous or Asynchronous API(better performance for async)
+>- submits metrics to cloudwatch for monitoring
+>- 2 batching subsections (both turned on by default) increases throughput decrease cost
+>1. collect records and write to multiple shards in the same `PutRecords` API call
+>1. Aggregate - increased latency, can store multiple records in one record +1000 records per second. incresases payload size and throughout(maximize 1MB/s limit)
+>- Compression must be implemented by user
+>- KPL Records must be de-coded with KCL or special helper library
 
-![i4](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-08-27%20at%201.12.09%20PM.png)
+>![i4](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-08-27%20at%201.12.09%20PM.png)
 
 ## Kinesis Agent
-- monitor log files and send direct to streams
-- java based writen ontop of kpl
-- install in linux only
-#### features 
-- write from multiple directories and write to multiple streams
-- routing feature based on directory / log file
-- can pre-process data before sending to streams (single line, csv to json, log to json)
-- handles file rotation, checkpointing and retry upon failures
+>- monitor log files and send direct to streams
+>- java based writen ontop of kpl
+>- install in linux only
+
+>#### features 
+>- write from multiple directories and write to multiple streams
+>- routing feature based on directory / log file
+>- can pre-process data before sending to streams (single line, csv to json, log to json)
+>- handles file rotation, checkpointing and retry upon failures
 - emits metrics to cloudwatch
 - great for aggrgating mass of logs
 
