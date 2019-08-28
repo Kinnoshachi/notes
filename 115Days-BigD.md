@@ -3,10 +3,10 @@
 
 # Day1
 ## Kinesis Overview
-- managed alternative to apache kafka
-- good for app logs, metrics, iot, clickstreams, realtime BD
-- streaming processing framework integration(spark, NiFi, etc)
-- data auto replicated synnchronously to 3AZ
+>- managed alternative to apache kafka
+>- good for app logs, metrics, iot, clickstreams, realtime BD
+>- streaming processing framework integration(spark, NiFi, etc)
+>- data auto replicated synnchronously to 3AZ
 ### Kinesis Services
 - Kinesis streams: low latemcy streaming ingest at scale
 - Kinesis analytics: real time analytic streams using SQL
