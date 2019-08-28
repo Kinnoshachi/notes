@@ -19,6 +19,11 @@
 - multiple sources can consume same stream
 - realtime processing with large scale of throughput
 - data is immutable
+#### Purposes
+![acg]()
+![acg2]()
+![architecture]()
+
 
 ### kinesis stream shards
 - one stream many shards
@@ -26,6 +31,7 @@
 - batching available
 - number of shards can change over time (reshard / merge)
 - records are ordered per shard
+
 ### Kinesis Shard stream records
 - records made of data blob <1MB, serialized bytes
 - record key: sent with a record, helps group records in shards. Use highly distibuted key to avoid *hot partition*
@@ -99,3 +105,5 @@
 - handles file rotation, checkpointing and retry upon failures
 - emits metrics to cloudwatch
 - great for aggrgating mass of logs
+
+
