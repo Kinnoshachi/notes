@@ -20,7 +20,7 @@
 ## Kinesis Streams
 
 >- streams are divided in ordered shards / partitions
->- default data retention 24h up to 7d
+>- default data retention 24h, up to 7d
 >- ability to reprocess / replay 
 >- multiple sources can consume same stream
 >- realtime processing with large scale of throughput
@@ -36,12 +36,14 @@
 >>- records are ordered per shard
 >>![shard img]()
 >>>### Kinesis Shard stream records
->>>1. Data Blob:
->>>1. Partiion Key: 
+>>> 1. Data Blob:
+>>>>- is the data added to stream via a producer
+>>>>- max size of data payload after base64-decoding is 1mb
+>>> 2. Partiion Key: 
 >>>>- groups data by shard
 >>>>- indicates which shard data belongs to
 >>>>- specified by the application putting data into stream  *Use highly distibuted key to avoid *hot partition*
->>>1. Sequence number: 
+>>> 3. Sequence number: 
 >>>>- unique identifierfor for each record put into a shard, added by kinesis after ingestion
 >>>>- acts like a unique key that identifies a data blob
 >>>>- assigned when a producer calls `PutRecord(s)`
