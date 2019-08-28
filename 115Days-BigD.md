@@ -28,12 +28,12 @@
 
 
 
->### kinesis stream shards
->- one stream many shards
->- billing per shard
->- batching available
->- number of shards can change over time (reshard / merge)
->- records are ordered per shard
+>>### kinesis stream shards
+>>- one stream many shards
+>>- billing per shard
+>>- batching available
+>>- number of shards can change over time (reshard / merge)
+>>- records are ordered per shard
 
 >### Kinesis Shard stream records
 >- records made of data blob <1MB, serialized bytes
