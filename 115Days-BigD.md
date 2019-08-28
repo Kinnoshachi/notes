@@ -13,6 +13,8 @@
 >- kinesis firehose: load streams into S3, redshift, ElasticSearch, Splunk 
 
 ### Kinesis Streams
+>![architecture](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisArchitecture.png)
+
 >-streams are divided in ordered shards / partitions
 >- default data retention 24h up to 7d
 >- ability to reprocess / replay 
@@ -20,10 +22,10 @@
 >- realtime processing with large scale of throughput
 >- data is immutable
 >#### Purposes
-![acg](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisStreamBenefits.png)
 ![acg2](https://github.com/Kinnoshachi/notes/blob/master/resources/kinesisUses.png)
+
+![acg](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisStreamBenefits.png)
 ![loads](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisLoad.png)
-![architecture](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisArchitecture.png)
 
 
 ### kinesis stream shards
