@@ -17,7 +17,7 @@
 >![acg](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisStreamBenefits.png)
 >![loads](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisLoad.png)
 
-### Kinesis Streams
+## Kinesis Streams
 
 >- streams are divided in ordered shards / partitions
 >- default data retention 24h up to 7d
@@ -36,9 +36,16 @@
 >>- records are ordered per shard
 >>![shard img]()
 >>>### Kinesis Shard stream records
->>>- records made of data blob <1MB, serialized bytes
->>>- record key: sent with a record, helps group records in shards. Use highly distibuted key to avoid *hot partition*
->>>- Sequence number: unique identifierfor each record put in shard added by kinesis after ingestion
+>>>1. Data Blob:
+>>>1. Partiion Key: 
+>>>>groups data by shard
+>>>>indicates which shard data belongs to
+>>>>specified by the application putting data into stream  *Use highly distibuted key to avoid *hot partition*
+>>>1. Sequence number: 
+>>>>unique identifierfor for each record put into a shard, added by kinesis after ingestion
+>>>>acts like a unique key that identifies a data blob
+>>>>assigned when a producer calls `PutRecord(s)`
+>>>>cant use seq num to logically seperate data in terms of what shards they came from, must use partition keys for that 
 
 ### Kinesis Data Stream Limits
 >#### Producer
