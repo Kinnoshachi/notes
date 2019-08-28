@@ -20,9 +20,9 @@
 - realtime processing with large scale of throughput
 - data is immutable
 #### Purposes
-![acg]()
-![acg2]()
-![architecture]()
+![acg](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisStreamBenefits.png)
+![acg2](https://github.com/Kinnoshachi/notes/blob/master/resources/kinesisUses.png)
+![architecture](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisArchitecture.png)
 
 
 ### kinesis stream shards
@@ -61,7 +61,7 @@
 - kinesis producer library (KPL)
 - kinesis Agent: linux program that runs on servers
 - 3rd party libraries spark, log4j appenders, flume, kafka connect, nifi
-
+![loads](https://github.com/Kinnoshachi/notes/blob/master/resources/KinesisLoad.png)
 #### kinesis producer sdk - `PutRecord(s)`
 - PutRecords uses batch and increses throughput => less http requests
 - `ProvisionedThroughputExceeded` if go over limits
