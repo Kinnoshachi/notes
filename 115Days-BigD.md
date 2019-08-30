@@ -1,4 +1,5 @@
-# 115 DAYS OF BIG DATA
+# 115 DAYS OF BIG DATA - Dec 8th target
+
 # Domain 1: Collection
 
 # Day1
