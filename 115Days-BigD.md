@@ -120,7 +120,57 @@
 >- routing feature based on directory / log file
 >- can pre-process data before sending to streams (single line, csv to json, log to json)
 >- handles file rotation, checkpointing and retry upon failures
-- emits metrics to cloudwatch
-- great for aggrgating mass of logs
+>- emits metrics to cloudwatch
+>- great for aggrgating mass of logs
+
+
+# Day 4
+# Kinesis Consumers
+##### how to consume data from kinesis
+>- Kinesis sdk
+>- kinesis producer library (KCL)
+>- kinesis Agent: linux program that runs on servers
+>- 3rd party libraries spark, log4j appenders, flume, kafka connect, nifi
+>- kinesis firehose
+>- AWS Lambda
+>- enhanced fan-out
+
+#### Kinesis Conumer SDK - `GetRecords`
+>- Classic Kinesis - records are polled by cosumers from a shard
+>- each shard has 2MB total agg throughput 
+>- `GetRecords` returns up to 10mb of data(then throttle for 5 sec) or up to 1k records
+>- max 5 `GetRecords` API calls  per shard p/sec = 200ms latency
+>- if 5 consumers poll same shard, each can call api 1 tim per sec and recieve <400kb/s
+
+#### Kinesis Client Library (KCL)
+>- java first with other language support
+>- Read records produced by KPL (de-aggregate)
+>- share multiple shards with multiple consumers in one group "shard discovery"
+>- checkpointing feature to resume progress if a consumer goes down, leveraging Dynamo DB (one row per shard)
+>- provision througput for dynamo DB or on demand provisioning or Dynamo will throttle and slow down KCL
+
+#### Kinesis Connector Library
+>- older java library, leverages the KCL
+>- Write data to:
+>>* S3
+>>* DynamoDB
+>>* Redshift
+>>* ElasticSearch
+>> Kinesis firehouse can replace 
+
+#### AWS LAmbda
+>- can run light weight ETL to:
+>>* S3
+>>* DynamoDB
+>>* Redshift
+>>* ElasticSearch
+>> anywhere
+>- lambda consumer has a library to de-agg records from kpl
+>- can be used to trigger notif/emails in realtime
+>- has a configurable batch size to regulate throughput
+
+
+
+
 
 
