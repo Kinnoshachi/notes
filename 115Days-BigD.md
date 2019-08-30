@@ -100,8 +100,8 @@
 >- synchronous or Asynchronous API(better performance for async)
 >- submits metrics to cloudwatch for monitoring
 >- 2 batching subsections (both turned on by default) increases throughput decrease cost
->1. collect records and write to multiple shards in the same `PutRecords` API call
->1. Aggregate - increased latency, can store multiple records in one record +1000 records per second. incresases payload size and throughout(maximize 1MB/s limit)
+>>1. collect records and write to multiple shards in the same `PutRecords` API call
+>>1. Aggregate - increased latency, can store multiple records in one record +1000 records per second. incresases payload size and throughout(maximize 1MB/s limit)
 >- Compression must be implemented by user
 >- KPL Records must be de-coded with KCL or special helper library
 >- do not use if application/use case cannot have additional processing delay
