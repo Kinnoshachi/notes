@@ -169,6 +169,29 @@
 >- can be used to trigger notif/emails in realtime
 >- has a configurable batch size to regulate throughput
 
+# Day 5
+# Kinesis Ehanced Fanout
+#### Kinesis Operations - Adding Shards
+>- aka Shard splitting
+>- can be used to increase stream capacity (1mb p/shard )
+>- can be used to splie hot shard
+>- old shard is closed and then deleted once data expires
+#### Kinesis Operations - Merging Shards
+>- decrease stream capacity and save costs
+>- groups shards with low traffic
+>- old shards closed and deleted when data expires
+#### Kinesis Operations - Auto scaling
+>- auto scaling is not a native feature, however can use lambda
+>- API call to change number of shards is `UpdateShardCount`
+![architecture]
+#### Kinesis Operations - limitations
+>- resharding cannot be done in parallel, plan capacity in advance
+>- only one sharding operation at a time, takes a few sec
+>- 1k shards, takes 30k seconds, 8.3 hrs to double to 2k shards
+>- cannot:
+>>* scale more than twice in 24h rolling period for each stream
+>>* scale more than double shard count, or less than half
+>>* >500 shards per stream
 
 
 
