@@ -93,6 +93,25 @@ RemovePermission
 #### Amazon SQS Access Control allows you to assign policies to queues that grant specific interactions to other accounts without that account having to assume IAM roles from your account.
 #### Instead of a durable system you can build an asynchronous, client-side batching on top of Amazon SQS libraries that delays enqueue of messages to Amazon SQS and transmits a set of messages in a batch
 
+# SQS FAQs
+### Service access and regions
+
+    - Each Amazon SQS message queue is independent within each region
+    - You can transfer data between Amazon SQS and Amazon EC2 or AWS Lambda free of charge within a single region.
+    - When you transfer data between Amazon SQS and Amazon EC2 or AWS Lambda in different regions, you will be charged the normal data transfer rate.
+### Queue sharing
+    - to share a queue with someone else associate an access policy to the queue. SQS APIs policy statements:
+        * AddPermission
+        * RemovePermission
+        * SetQueueAttributes
+        * GetQueueAttributes
+    - To share a message queue with an AWS user, provide the full URL from the message queue you want to share. The CreateQueue and ListQueues operations return this URL in their responses.
+    - You can configure an access policy that allows anonymous users to access a message queue.
+    - The permissions API provides an interface for sharing access to a message queue to developers. However, this API cannot allow conditional access or more advanced use cases.
+    - SetQueueAttributes operation supports the full access policy language. For example, you can use the policy language to restrict access to a message queue by IP address and time of day. 
+### Limits and restrictions
+    - `MessageRetentionPeriod` for duration in seconds of retention
+    
 
 # SNS
 
