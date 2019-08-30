@@ -111,7 +111,39 @@ RemovePermission
     - SetQueueAttributes operation supports the full access policy language. For example, you can use the policy language to restrict access to a message queue by IP address and time of day. 
 ### Limits and restrictions
     - `MessageRetentionPeriod` for duration in seconds of retention
-    
+    - use the console or the `SetQueueAttributes` method to set the MaximumMessageSize attribute between 1,024 bytes (1 KB), and 262,144 bytes (256 KB)
+    - To send messages larger than 256 KB, use the Amazon SQS Extended Client Library for Java. This library lets you send an Amazon SQS message that contains a reference to a message payload in Amazon S3 that can be as large as 2 GB. 
+    - messages can contain up to 256 KB of text data, including XML, JSON and unformatted text. 
+    - there is a 120,000 limit for the number of inflight messages for a standard queue and 20,000 for a FIFO queue. Messages are inflight after they have been received from the queue by a consuming component, but have not yet been deleted from the queue.
+    - Queue names are limited to 80 characters, You can use alphanumeric characters, hyphens (-), and underscores (_). queue's name must be unique within an AWS account and region
+### Compliance
+    - SQS is PCI DSS Level 1 certified.
+    -  If you have an executed Business Associate Agreement (BAA) with AWS, you can use Amazon SQS to build your HIPAA-compliant applications, store messages in transit, and transmit messages—including messages containing protected health information (PHI).
+### Server-Side encryption (SSE)
+    - SSE encrypts messages via KMS
+    - To enable SSE for a new or existing queue using the Amazon SQS API, specify the customer master key (CMK) ID: the alias, alias ARN, key ID, or key ARN of the an AWS-managed CMK or a custom CMK by setting the KmsMasterKeyId attribute of the CreateQueue or SetQueueAttributes action.
+    - Before you can use SSE, you must configure AWS KMS key policies to allow encryption of queues and encryption and decryption of messages.
+    - SSE for a queue, you can use the AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK.
+    - To send messages to an encrypted queue, the producer must have the kms:GenerateDataKey and kms:Decrypt permissions for the CMK.
+    - To receive messages from an encrypted queue, the consumer must have the kms:Decrypt permission for any CMK that is used to encrypt the messages in the specified queue. If the queue acts as a dead letter queue, the consumer must also have the kms:Decrypt permission for any CMK that is used to encrypt the messages in the source queue.
+    - SSE encrypts the body of a message in an Amazon SQS queue. SSE doesn't encrypt the following components:
+            - Queue metadata (queue name and attributes) 
+            - Message metadata (message ID, timestamp, and attributes)
+            - Per-queue metrics
+    - SSE uses the AES-GCM 256 algorithm.
+    - The AWS KMS per-account limit (100 TPS by default). calc example 300 seconds × 100 TPS / 1 IAM user = 30,000 queues
+    - estimate KMS usage cost. API Requests per que = (billing period in sec) / (data key reuse period in 1 sec) * (2* (number of producing principals )+(number of consuming principls))
+    - In general, producing principals incur double the cost of consuming principals. If the producer and consumer have different IAM users, the cost increases.
+
+### Security and reliability
+    - SQS has its own IAM like language
+    - supports the HTTP over SSL (HTTPS) and Transport Layer Security (TLS) protocols. 
+### FIFO queues
+    - default, FIFO queues support up to 3,000 messages per second with batching, or up to 300 messages per second (300 send, receive, or delete operations per second) without batching.
+    - it is possible to move to a fifo queue after creating a standard queue
+    - Any duplicates introduced by the message producer are removed within a 5-minute deduplication interval.
+### Features, functionality, and interfaces
+
 
 # SNS
 
