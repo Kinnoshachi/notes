@@ -2,7 +2,7 @@
 # Domain 1: Collection
 
 # Day1
-## Kinesis Overview
+# Kinesis Overview
 >- managed alternative to apache kafka
 >- good for app logs, metrics, iot, clickstreams, realtime BD
 >- streaming processing framework integration(spark, NiFi, etc)
@@ -110,7 +110,7 @@
 
 >![i4](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-08-27%20at%201.12.09%20PM.png)
 
-## Kinesis Agent
+#### Kinesis Agent
 >- monitor log files and send direct to streams
 >- java based writen ontop of kpl
 >- install in linux only
@@ -191,7 +191,7 @@
 >- cannot:
 >>* scale more than twice in 24h rolling period for each stream
 >>* scale more than double shard count, or less than half
->>* >500 shards per stream
+>>* more than 500 shards per stream
 
 
 
