@@ -39,9 +39,9 @@
 >>> 1. Data Blob:
 >>>>- is the data added to stream via a producer
 >>>>- max size of data payload after base64-decoding is 1mb
->>> 2. Partiion Key: 
->>>>- groups data by shard
->>>>- indicates which shard data belongs to
+>>> 2. Partition/Record Key: 
+>>>>- groups records in shards
+>>>>- same key = same shard
 >>>>- specified by the application putting data into stream  *Use highly distibuted key to avoid *hot partition*
 >>> 3. Sequence number: 
 >>>>- unique identifierfor for each record put into a shard, added by kinesis after ingestion
