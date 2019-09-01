@@ -212,6 +212,23 @@
 >>* more than 500 shards per stream
 
 
+# Day 7
+# Kinesis firehose
+#### Overview
+>- fully managed, autoscaling
+>- near realtime (60sec minimum for non full batches)
+>- loads data into:
+>>1. Redshift
+>>1. S3
+>>1. ElasticSearch
+>>1. Splunk
+>- supports many data formats and can convert from JSON to parque/ORC (only for s3)
+>- data transformations through lambda (ex. CSV=>JSON)
+>- supports compression when target is S3(GZIP, ZIP, Snappy)
+>- only GZIP is further loaded into Redshift
+>- pay only for amount of data going through firehose
 
 
 
+
+ddddd
