@@ -172,7 +172,24 @@
 
 # Day 5
 # Kinesis Ehanced Fanout
-#### Kinesis Operations - Adding Shards
+#### works wit KCL 2.0 or Lambda
+>- each consumer gets 2mb/s throughput per shard
+>- 2o consumers get 40mb/s per shard
+>- 2mb/s p/shard limit exceeded due to pushing data to consumers over HTTP/2, and has reuced latency (~70ms)
+##### Enhanced Fanout vs Standard Consumers
+>###### When use Standard
+>- low number of consumers <3
+>- can tolerate ~200ms latency
+>- minimize cost
+>###### When use Enhanced 
+>- multiple consumers for same stream
+>- low latency requirment 
+>- higher cost
+>- default limit 5 consumers using enhanced fan-out per data stream
+
+# Day 6
+# Kinesis Scaling
+##### Kinesis Operations - Adding Shards
 >- aka Shard splitting
 >- can be used to increase stream capacity (1mb p/shard )
 >- can be used to splie hot shard
