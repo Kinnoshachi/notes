@@ -228,6 +228,6 @@
 >- only GZIP is further loaded into Redshift
 >- pay only for amount of data going through firehose
 ![kdf diagram](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%202.44.35%20PM.png)
-![kdf delivery]()
+![kdf delivery](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%202.50.30%20PM.png)
 
 
