@@ -230,4 +230,22 @@
 ![kdf diagram](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%202.44.35%20PM.png)
 ![kdf delivery](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%202.50.30%20PM.png)
 
-
+#### Data buffering
+>- firehose recieves outputs from source and accumulates in the buffer
+>- the buffer is flushed based on time and size rules
+>- buffer size or buffer time: if reached gets flushed
+>- can auto increase buffer size to increase throughput
+>- min time set can be 1min, size few mb
+#### Kinesis Data Streams vs Firehose
+>##### Streams
+>- need to write custom code (producer/ consumer)
+>- real time (~200 ms latency for classic, ~70ms for enhanced fan out)
+>- must manage scaling (shard splitting / merging)
+>- storage for 1-7 D, replay capability, multi consumer
+>- use with Lambda to insert data in realtime to other services ie elastic search
+>##### Firehose
+>- fully managed, sends to S3, Splunk, RedShift, ES
+>- serverless data transforms with lambda
+>- near realtime(lowest is 1min)
+>- automated scaling
+>- no data storage
