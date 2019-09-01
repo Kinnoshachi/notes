@@ -227,7 +227,7 @@
 >- supports compression when target is S3(GZIP, ZIP, Snappy)
 >- only GZIP is further loaded into Redshift
 >- pay only for amount of data going through firehose
-![kdf diagram]()
+![kdf diagram](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%202.44.35%20PM.png)
 
 
 
