@@ -250,7 +250,10 @@
 >- automated scaling
 >- no data storage
 
-#Day 7 - 8 - 9 - 10
+# Day 7 - 8 - 9 - 10
 # Archetecture build
 
 ![sarchitecture](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.06.20%20PM.png)
+
+
+![req1]()
