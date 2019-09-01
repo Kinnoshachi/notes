@@ -256,4 +256,8 @@
 ![sarchitecture](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.06.20%20PM.png)
 
 
-![req1]()
+![req1](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.18.18%20PM.png)
+![req2](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.18.36%20PM.png)
+![req3](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.17.39%20PM.png)
+![req4](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.17.45%20PM.png)
+![req5](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.18.01%20PM.png)
