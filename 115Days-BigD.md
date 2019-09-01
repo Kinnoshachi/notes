@@ -249,3 +249,8 @@
 >- near realtime(lowest is 1min)
 >- automated scaling
 >- no data storage
+
+#Day 7 - 8 - 9 - 10
+# Archetecture build
+
+![sarchitecture]()
