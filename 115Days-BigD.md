@@ -262,3 +262,41 @@
 ![req4](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.17.45%20PM.png)
 ![req5](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.18.01%20PM.png)
 ![req6](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-01%20at%203.18.11%20PM.png)
+
+
+#####
+>- launch firhose 
+>- launch ec2
+````
+sudo yum install -y aws-kinesis-agent
+wget http://media.sundog-soft.com/AWSBigData/LogGenerator.zip
+
+unzip LogGenerator.zip
+chmod a+x LogGenerator.py
+sudo mkdir /var/log/cadabra
+cd etc/aws-kinesis/
+sudo nano agent.json
+````
+>- go to IAM => create new user => admin policy grab keys to input to json
+>- add
+```
+"awsAccessKeyId": xxxx
+"awsSecretKey" : xxxx
+#delete data streams section
+#under flows modify
+"filePatterns": "/var/log/cadabra/*.log"
+"deliveryStrem": "PurchaseLogs"
+
+#^o , ^x to exit nano
+```
+````
+sudo service aws-kinesis-agent start
+sudo chkconfig aws-kinesis-agent on //turns on service every time ec2 starts
+cd ~
+sudo ./LogeGenerator.py 500000
+cd /var/log/cadabra/
+ls #check to make sure psudo data was created
+tail -f /var/log/aws-kinesis-agent/aws-kinesis-agent.log
+
+
+````
