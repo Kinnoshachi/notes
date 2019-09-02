@@ -187,21 +187,21 @@ https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/app
 * record of every event change since workflow began. Event is discrete change in workflow execution state
 #### Actors
 1. workflow starter
->- any app that can initiate workflow executions
+* any app that can initiate workflow executions
 
-1. decider
->- >- activities inside a workflow can run sequentially, parallel, A/synchronously 
->- decider, logic that coordinates tasks. schedulrs tasks and provides input data to workers, processes events that arrive while workflow is in progress and closes workflow when objective is completed.
-1. activity workers
->- a single cpu process that performes activity task. different types of activity workers process diffferent activity types. when worker is ready to prcoess new task it polls swf, after complete returns status to swf. 
+2. decider
+* activities inside a workflow can run sequentially, parallel, A/synchronously 
+* decider, logic that coordinates tasks. schedulrs tasks and provides input data to workers, processes events that arrive while workflow is in progress and closes workflow when objective is completed.
+3. activity workers
+* a single cpu process that performes activity task. different types of activity workers process diffferent activity types. when worker is ready to prcoess new task it polls swf, after complete returns status to swf. 
 #### Tasks
 * provides activity workers and deciders with work assignments 
->1. activity task
->> chrge credit card, check inventory
->1. AWS lambda task
->> like activity task
->1. decision task
->> sends state to decider, contains workflow history. each decision task contains paginated view of entire workflow execution history.
+1. activity task
+* chrge credit card, check inventory
+1. AWS lambda task
+* like activity task
+1. decision task
+* sends state to decider, contains workflow history. each decision task contains paginated view of entire workflow execution history.
 #### task lists
 * organizes tasks of a workflow, dynamic queue(automatically created). When a task is scheduled, you can specify what queueu(task list) to put it in. lists then route tasks to workers.
 
