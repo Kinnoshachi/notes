@@ -1,5 +1,3 @@
-[SNS](https://github.com/Kinnoshachi/notes/blob/master/SA-notes.md#sns)
-## ___________________________
 
 # SQS
 
