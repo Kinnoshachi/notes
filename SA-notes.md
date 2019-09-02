@@ -215,7 +215,7 @@ https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/app
 >- single execution of workflow identified by domain, workflow id, and runid. domain and workflow id passed to `StartWorkflowExecution`, runid is returned by it
 #### Workflow execution closure
 >- workflow can be closed as complete, cancelled, failed, timed out. Can be continued as a new execution or terminated. Decider, admin, or SWF can ckose a workflow execution.
-![execution]()
+![execution](https://github.com/Kinnoshachi/notes/blob/master/resources/Screen%20Shot%202019-09-02%20at%2012.44.03%20PM.png)
 
 
 
